@@ -19,4 +19,4 @@ This repository is part of my journey to strengthen problem-solving skills and c
 - **Compiler:** GCC
 
 ## 📂 Repository Structure
-Each folder represents a specific DSA topic, and contains individual C++ implementations of related problems.
+Each folder represents a specific DSA topic and contains individual C++ implementations of related problems.

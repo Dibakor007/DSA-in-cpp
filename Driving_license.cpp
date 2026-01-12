@@ -9,10 +9,10 @@ int main(){
         cout << "Invalid input. Please enter a valid age." << endl;
         return -1;
     }
-    if(n <= 18){
+    if(n < 18){
         cout << "You are not eligible to get a driving license." << endl;
         return 0;
     }
     cout << "You are eligible to get a driving license." << endl;
-    return 1;
+    return 0;
 }

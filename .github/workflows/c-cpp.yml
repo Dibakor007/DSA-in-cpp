@@ -14,4 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: compile sources
-      run: find src -name "*.cpp" -print0 | xargs -0 g++ -std=c++17 -c
+      run: |
+        test -n "$(find src -name "*.cpp" -print -quit)"
+        find src -name "*.cpp" -print0 | xargs -0 g++ -std=c++17 -c

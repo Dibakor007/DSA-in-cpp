@@ -16,4 +16,4 @@ jobs:
     - name: compile sources
       run: |
         test -n "$(find src -name "*.cpp" -print -quit)" || { echo "Error: No C++ source files found in the src/ directory"; exit 1; }
-        find src -name "*.cpp" -print0 | xargs -0 g++ -std=c++17 -c
+        find src -name "*.cpp" -print0 | xargs -0 -n 1 g++ -std=c++17 -fsyntax-only

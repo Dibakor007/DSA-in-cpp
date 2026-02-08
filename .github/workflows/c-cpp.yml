@@ -16,7 +16,7 @@ jobs:
     - name: compile sources
       run: |
         set -e
-        command -v g++ >/dev/null 2>&1 || { echo "Error: g++ not found. Install build-essential."; exit 1; }
-        test -d src || { echo "Error: src/ directory not found. This workflow expects C++ sources in src/."; exit 1; }
-        test -n "$(find src -name "*.cpp" -print -quit)" || { echo "Error: No .cpp files found in src/ directory. This workflow compiles C++ sources in src/."; exit 1; }
+        command -v g++ >/dev/null 2>&1 || { echo "Error: g++ not found. Please install a C++ compiler."; exit 1; }
+        test -d src || { echo "Error: src/ directory not found."; exit 1; }
+        test -n "$(find src -name "*.cpp" -print -quit)" || { echo "Error: No .cpp files found in src/."; exit 1; }
         find src -name "*.cpp" -print0 | xargs -0 g++ -std=c++17 -Wall -Wextra -fsyntax-only -I src -I .
